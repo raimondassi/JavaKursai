@@ -1,8 +1,8 @@
-package com.company;
+
 
 import java.util.Scanner;
 
-public class Java3_1 {
+public class Java3 {
 
     public static void main(String[] args) {
 

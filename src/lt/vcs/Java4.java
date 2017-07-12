@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by ozc on 2017.07.11.
  */
-public class Java4_1 {
+public class Java4 {
 
     public static void main(String[] args) {
 
@@ -72,7 +72,7 @@ public class Java4_1 {
         }
         System.out.println("Skaicius yra: " + keliazenklisSkaicius + " zenklis");
     }
-// ? keistai spausdina
+// ??????????????????? keistai spausdina
     public static void atspausdinsKiekSkaiciuDalijasiIsDaliklio(int daliklis, int kiekSkaiciuAtspauzdinti) {
         int[] masyvas={1,5,9,8,7,1,2,3,4,5,6,7,8,9,7,8,9,4,5,6,5,2,3};
         int[] rezultatuMasyvas= new int[kiekSkaiciuAtspauzdinti];
@@ -89,12 +89,69 @@ public class Java4_1 {
         for(int i:rezultatuMasyvas)
         System.out.print(rezultatuMasyvas[i]+" ");
     }
-
+//??????????????????????
     public static void atspausdinaSkaiciusAtvirksciai(){
         Scanner scanner=new Scanner(System.in);
+        int ivestasSkaicius=scanner.nextInt();
+
 
         scanner.close();
     }
+//?????????????????? kodel floatas neraso po kableliu tiksliu skaiciu
+    public static void keiciameIvestoSkaiciausTipaPanaudojusCastOperatoriu(){
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Ivesk pirma skaiciu");
+        int pirmasSkaicius=scanner.nextInt();
+        System.out.println("Ivesk antras skaiciu");
+        int antrasSkaicius=scanner.nextInt();
+         float rezultatas=pirmasSkaicius/antrasSkaicius;
+        System.out.println("Atspausdinamas padalintas rezultatas float:" + rezultatas);
+        int rezultatas1= (int)rezultatas;
+        System.out.println("atspausdinams padalintas rezultatas int:"+ rezultatas1);
+
+        scanner.close();
+    }
+//?????????????? kodel outOfBoundException
+    public static void nuskaitoNSkaiciuIrSusumuojaVidurkiSandauga(){
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Iveskite n skaiciu");
+        int ivestasNSkaicius=scanner.nextInt();
+        int[] skaiciuMasyvas=new int[ivestasNSkaicius];
+
+        for (int i:skaiciuMasyvas){
+            System.out.println("Iveskite " + (i + 1) + " skaiciu:");
+            skaiciuMasyvas[i]=scanner.nextInt();
+            i++;
+        }
+        int suma=0;
+        int sandauga=1;
+
+
+        for (int i:skaiciuMasyvas){
+            suma=suma + skaiciuMasyvas[i];
+            sandauga=sandauga*skaiciuMasyvas[i];
+        }
+        System.out.println("Skaiciu suma: "+ suma);
+        System.out.println("Skaiciu vidurkis: " + suma/ivestasNSkaicius);
+        System.out.println("Sakiciu sandauga: " + sandauga);
+
+        scanner.close();
+
+    }
+
+    public static void verciaCentimetrusIColius(){
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Iveskite centimetrus");
+        double ivestiCentimetrai=scanner.nextInt();
+        double paverstiColiai= ivestiCentimetrai/2.54;
+        System.out.println("Ivesti centimetrai: "+ivestiCentimetrai+" Atitinka coliu: "+ paverstiColiai);
+
+        scanner.close();
+    }
+
+
+
+
 
 
 }
