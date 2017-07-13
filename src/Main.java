@@ -19,7 +19,8 @@ public class Main {
         // Java4.verciaCentimetrusIColius();
        // Java4DvigubiCiklai.atspausdinsStaciakampiPagalIvestusParametrus(6,6);
        // Java4DvigubiCiklai.atspausdinsPrasikeiciantiStaciakampiPagalIvestusParametrus(6,6);
-Java4Masyvai.patikrinaArDuMasyvaiYraLygus();
+//Java4Masyvai.patikrinaArDuMasyvaiYraLygus();
+        Java4Masyvai.spausdinaKiekKokiuSkaiciuIvestaIkiMinus1();
 
 
     }

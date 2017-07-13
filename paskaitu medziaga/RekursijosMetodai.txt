@@ -1,0 +1,61 @@
+  public static int faktorialas(int sk) {
+        int result = 1;
+        for (int i = 1; i <= sk; i++) {
+            result = result * i;
+        }
+        return result;
+    }
+
+    public static int faktorialasRek(int sk) {
+        if (sk == 1) {
+            return 1;
+        }
+        return sk * faktorialasRek(sk - 1);
+    }
+
+    public static void kvieciaBeGalo() {
+        kvieciaBeGalo();
+    }
+
+    public static int fibonacci(int n) {
+        int num1 = 0;
+        int num2 = 1;
+        int result = 0;
+        for (int i = 0; i < n - 1; i++) {
+            result = num1 + num2;
+            num1 = num2;
+            num2 = result;
+        }
+        return result;
+    }
+
+    public static int fibonacciRek(int n) {
+        if (n == 0)
+            return 0;
+        else if (n == 1)
+            return 1;
+        else
+            return fibonacciRek(n - 1) + fibonacciRek(n - 2);
+    }
+
+    public static void skaiciusAtvirksciaiRek(int sk) {
+        if (sk == 0) {
+            return;
+        }
+        System.out.println(sk % 10);
+        skaiciusAtvirksciaiRek(sk / 10);
+    }
+
+    public static int skaiciuSuma(int sk) {
+        if (sk / 10 == 0) {
+            return sk;
+        }
+        return sk % 10 + skaiciuSuma(sk / 10);
+    }
+
+    public static void skaiciusAtvirksciai(int sk) {
+        while (sk != 0) {
+            System.out.println(sk % 10);
+            sk = sk / 10;
+        }
+    }

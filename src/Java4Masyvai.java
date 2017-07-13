@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Created by ozc on 2017.07.12.
  */
@@ -29,6 +31,27 @@ public class Java4Masyvai {
                 System.out.println("Masyvai nelygus");
             }
         }
+
+    static void spausdinaKiekKokiuSkaiciuIvestaIkiMinus1(){
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Iveskite skaiciu nuo -1 iki 10");
+        int ivestasSkaicius=scanner.nextInt();
+        String pilnasStringas="";
+
+        while(ivestasSkaicius!=-1){
+            pilnasStringas=pilnasStringas+" "+ ivestasSkaicius;
+            System.out.println("Iveskite kita sk");
+            ivestasSkaicius=scanner.nextInt();
+        }
+            System.out.println("Visas ivestas stringas" + pilnasStringas);
+
+        scanner.close();
+
+    }
+
+
+
+
 
     }
 
