@@ -1,18 +1,20 @@
 import java.util.Scanner;
 
+
 /**
  * Created by ozc on 2017.07.12.
  */
 public class Java4Masyvai {
     //????????????????????????? Kodel negalima i switch paduoti boolean reiksmes? ir kodel neveikia tas i:pirmasMasyvas
+    // nes switche negalime daryti palyginimu
     static void patikrinaArDuMasyvaiYraLygus() {
-        int[] pirmasMasyvas = {1, 2, 3, 4, 5};
-        int[] antrasMasyvas = {1, 2, 3, 4, 5, 6};
+        Integer[] pirmasMasyvas = {1, 2, 3, 4, 5};
+        Integer[] antrasMasyvas = {1, 2, 3, 4, 5};
         boolean arNelygusPagalReiksmes = false;
 
         boolean arLygusPagalIlgi = pirmasMasyvas.length == antrasMasyvas.length;
         if (arLygusPagalIlgi) {
-            for /*(int i : pirmasMasyvas)*/ (int i = 0; i < pirmasMasyvas.length; i++) {
+            for (Integer i : pirmasMasyvas) /*(int i = 0; i < pirmasMasyvas.length; i++)*/ {
                 if (pirmasMasyvas[i] != antrasMasyvas[i]) {
                     arNelygusPagalReiksmes = true;
 /*
