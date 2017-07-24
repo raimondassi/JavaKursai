@@ -1,11 +1,11 @@
 package KavosAparatas;
 
+import KavosAparatas.*;
+
 /**
  * Created by Raimondas on 2017.07.17.
  */
 public class KavosAparatusAptarnaujantiKlase {
-
-
 
 
     public KavosAparatas[] sukuriaKavosAparatus(int kavosAparatuKiekis) {
@@ -21,7 +21,9 @@ public class KavosAparatusAptarnaujantiKlase {
 
 
     public void isvaloVisuAparatuProduktus(KavosAparatas[] kavosAparatai) {
-
+        for (int i = 0; i < kavosAparatai.length; i++) {
+            kavosAparatai[i].atliekamePlovima();
+        }
 
 
     }

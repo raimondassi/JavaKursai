@@ -24,6 +24,14 @@ public class KavosAparatas {
         return vandensKiekis;
     }
 
+    void setKavosAparatoProduktus( int cukrausKiekis, int pupeliuKiekis, int vandensKiekis){
+        KavosProduktai.cukrausKiekis=cukrausKiekis;
+        KavosProduktai.pupeliuKiekis=pupeliuKiekis;
+        KavosProduktai.vandensKiekis=vandensKiekis;
+    }
+
+
+
     public int getPanaudojimuSkaicius() {
         return panaudojimuSkaicius;
     }
@@ -101,6 +109,8 @@ public class KavosAparatas {
         }
         panaudojimuSkaicius++;
     }
+
+    void isvalomeKavosAparatoProduktus(){};
 
     void atliekamePlovima() {
         panaudojimuSkaicius = 0;

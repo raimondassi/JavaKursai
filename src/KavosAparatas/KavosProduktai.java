@@ -8,7 +8,7 @@ public class KavosProduktai {
     static int pupeliuKiekis;
     static int vandensKiekis;
 
-    public  KavosProduktai(int cukrausKiekis, int pupeliuKiekis, int vandensKiekis){
+    public KavosProduktai(int cukrausKiekis, int pupeliuKiekis, int vandensKiekis){
         this.cukrausKiekis=cukrausKiekis;
         this.pupeliuKiekis=pupeliuKiekis;
         this.vandensKiekis=vandensKiekis;
@@ -17,13 +17,17 @@ public class KavosProduktai {
      public KavosProduktai gausKavosProduktuKopija(){
         return new KavosProduktai(cukrausKiekis, pupeliuKiekis, vandensKiekis);
     }
-
+/*
    void setKavosProduktus( int cukrausKiekis, int pupeliuKiekis, int vandensKiekis){
          this.cukrausKiekis=cukrausKiekis;
          this.pupeliuKiekis=pupeliuKiekis;
          this.vandensKiekis=vandensKiekis;
    }
+*/
 
+    void setKavosProduktus(){
+        new KavosProduktai(cukrausKiekis,pupeliuKiekis,vandensKiekis);
+    }
  /*  void getKavosProduktus(){
        return cukrausKiekis;
        return pupeliuKiekis;

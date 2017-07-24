@@ -6,7 +6,7 @@ package KavosAparatas;
 public class KavosAparatoMain {
     public static void main(String[] args) {
         KavosAparatusAptarnaujantiKlase kavosAparatusAptarnaujantiKlase=new KavosAparatusAptarnaujantiKlase();
-        KavosAparatas[] aparatuMasyvas= kavosAparatusAptarnaujantiKlase.sukuriaKavosAparatus(10);
-        kavosAparatusAptarnaujantiKlase.isvaloVisuAparatuProduktus(aparatuMasyvas);
+        KavosAparatas[] kavosaparatuMasyvas= kavosAparatusAptarnaujantiKlase.sukuriaKavosAparatus(10);
+        kavosAparatusAptarnaujantiKlase.isvaloVisuAparatuProduktus(kavosaparatuMasyvas);
     }
 }
