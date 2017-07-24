@@ -9,11 +9,14 @@ import static KavosAparatas.KavosProduktai.*;
  */
 public class KavosAparatas {
 
-    int panaudojimuSkaicius;
-    int PANAUDOJIMO_SKAICIAUS_KONSTANTA = 100;
+    static int panaudojimuSkaicius;
+    static int PANAUDOJIMO_SKAICIAUS_KONSTANTA = 100;
 
 
     public KavosAparatas() {
+    }
+    public KavosAparatas(KavosProduktai kavosProduktai){
+
     }
 
     public int getCukrausKiekis() {
@@ -23,6 +26,11 @@ public class KavosAparatas {
     public int getVandensKiekis() {
         return vandensKiekis;
     }
+
+    public int getPupeliuKiekis() {
+        return pupeliuKiekis;
+    }
+
 
     void setKavosAparatoProduktus( int cukrausKiekis, int pupeliuKiekis, int vandensKiekis){
         KavosProduktai.cukrausKiekis=cukrausKiekis;
@@ -36,68 +44,38 @@ public class KavosAparatas {
         return panaudojimuSkaicius;
     }
 
-    public void setPanaudojimuSkaicius(int panaudojimuSkaicius) {
-        this.panaudojimuSkaicius = panaudojimuSkaicius;
+    public void setPanaudojimuSkaicius() {
+        this.panaudojimuSkaicius = 0;
     }
 
     int papildytiVandens() {
-        return 0;
+        return vandensKiekis=VANDENS_PAPILDYMAS;
     }
 
     int papildytiPupeliu() {
-        return 0;
+        return pupeliuKiekis=PUPELIU_PAPILDYMAS;
     }
 
     int papildytiCukraus() {
-        return 0;
-    }
-
-    void gaminkKava(String kavosTipas) {
-        switch (kavosTipas) {
-            case "espresso":
-                gaminameEspresso();
-                break;
-            case "capucino":
-                gaminameCapucino();
-                break;
-            case "latte":
-                gaminameLatte();
-                break;
-        }
+        return cukrausKiekis=CUKRAUS_PAPILDYMAS;
     }
 
 
-    void gaminameEspresso() {
-        vandensKiekis = vandensKiekis - 100;
-        pupeliuKiekis = pupeliuKiekis - 100;
-        cukrausKiekis = cukrausKiekis - 10;
-        visiTikrinimaiIrPranesimai();
-    }
 
 
-    void gaminameCapucino() {
-        vandensKiekis = vandensKiekis - 200;
-        pupeliuKiekis = pupeliuKiekis - 100;
-        cukrausKiekis = cukrausKiekis - 30;
-        visiTikrinimaiIrPranesimai();
-    }
 
-    void gaminameLatte() {
-        vandensKiekis = vandensKiekis - 200;
-        pupeliuKiekis = pupeliuKiekis - 150;
-        cukrausKiekis = cukrausKiekis - 20;
-        visiTikrinimaiIrPranesimai();
-
-    }
 
     void tikrinameArNereikiaKoNorsPapildyti() {
-        if (vandensKiekis < 200) {
+        if (vandensKiekis <= MINIMALUS_VANDENS_KIEKIS) {
             papildytiVandens();
+            System.out.println("Pasiektas minimalus vandens kiekis: papildome vandeni");
         }
-        if (pupeliuKiekis < 150) {
+        if (pupeliuKiekis <= MINIMALUS_PUPELIU_KIEKIS) {
             papildytiPupeliu();
-            if (cukrausKiekis < 30) {
+            System.out.println("Pasiektas minimalus pupeliu kiekis: papildome pupeles");
+            if (cukrausKiekis <= MINIMALUS_CUKRAUS_KIEKIS) {
                 papildytiCukraus();
+                System.out.println("Pasiektas minimalus cukraus kiekis: papildome cukru");
             }
         }
     }
@@ -110,23 +88,27 @@ public class KavosAparatas {
         panaudojimuSkaicius++;
     }
 
-    void isvalomeKavosAparatoProduktus(){};
+    void isvalomeKavosAparatoProduktus(){
+        cukrausKiekis=0;
+        vandensKiekis=0;
+        pupeliuKiekis=0;
+    };
 
     void atliekamePlovima() {
         panaudojimuSkaicius = 0;
     }
 
-    void pranesameInformacijaPoKikevienoPanaudojimo() {
+     void pranesameInformacijaPoKiekvienoPanaudojimo() {
         System.out.println("Likes vandens kiekis: " + KavosProduktai.vandensKiekis);
         System.out.println("Lines pupeliu kiekis: " + KavosProduktai.pupeliuKiekis);
         System.out.println("Likes cukraus kiekis: " + cukrausKiekis);
         System.out.println("Iki issiplovimo liko: " + (PANAUDOJIMO_SKAICIAUS_KONSTANTA - panaudojimuSkaicius));
     }
 
-    void visiTikrinimaiIrPranesimai() {
+     void visiTikrinimaiIrPranesimai() {
         tikrinameArNereikiaKoNorsPapildyti();
         tikrinamePanaudojimuBusena();
-        pranesameInformacijaPoKikevienoPanaudojimo();
+        pranesameInformacijaPoKiekvienoPanaudojimo();
     }
 
 }

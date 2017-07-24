@@ -8,5 +8,7 @@ public class KavosAparatoMain {
         KavosAparatusAptarnaujantiKlase kavosAparatusAptarnaujantiKlase=new KavosAparatusAptarnaujantiKlase();
         KavosAparatas[] kavosaparatuMasyvas= kavosAparatusAptarnaujantiKlase.sukuriaKavosAparatus(10);
         kavosAparatusAptarnaujantiKlase.isvaloVisuAparatuProduktus(kavosaparatuMasyvas);
+        KavosProduktai kavosProduktuObjektas=new KavosProduktai(1000, 500, 10000);
+
     }
 }
