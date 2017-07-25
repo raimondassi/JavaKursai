@@ -9,6 +9,7 @@ public class KavosAparatoMain {
         KavosAparatas[] kavosaparatuMasyvas= kavosAparatusAptarnaujantiKlase.sukuriaKavosAparatus(10);
         kavosAparatusAptarnaujantiKlase.isvaloVisuAparatuProduktus(kavosaparatuMasyvas);
         KavosProduktai kavosProduktuObjektas=new KavosProduktai(1000, 500, 10000);
+        kavosAparatusAptarnaujantiKlase.visiemsAparatamsPriskiriameTaPatiProduktuObjekta(kavosaparatuMasyvas,kavosProduktuObjektas);
 
     }
 }

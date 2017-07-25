@@ -1,6 +1,6 @@
 package KavosAparatas;
 
-import KavosAparatas.*;
+import java.util.List;
 
 /**
  * Created by Raimondas on 2017.07.17.
@@ -28,9 +28,9 @@ public class KavosAparatusAptarnaujantiKlase {
             isvalytasVanduo=isvalytasVanduo+kavosAparatai[i].getVandensKiekis();
             kavosAparatai[i].isvalomeKavosAparatoProduktus();
         }
-        System.out.println("Isvalytas vanduo: "+isvalytasVanduo);
+        System.out.println("Isvalytas vanduo: "+ isvalytasVanduo);
         System.out.println("Isvalytas cukrus: " + isvalytasCukrus);
-        System.out.println("Isvalytos pupeles: "+isvalytosPupeles);
+        System.out.println("Isvalytos pupeles: "+ isvalytosPupeles);
     }
 
     public void isplausimePasirinktaKavosAparataIsMasyvo(KavosAparatas[] kavosAparatas, int konkretausAparatoNumeris){
@@ -44,15 +44,15 @@ public class KavosAparatusAptarnaujantiKlase {
 
     }
 
-    public void visiemsAparatamsPriskiriameTaPatiProduktuObjekta(KavosAparatas[] kavosAparatai, KavosProduktai produktuObjektas){
-        for(int i=0;i<kavosAparatai.length;i++){
-            kavosAparatai[i].
+    public void visiemsAparatamsPriskiriameTaPatiProduktuObjekta(KavosAparatas[] kavosAparatai,  KavosProduktai produktuObjektas) {
+        for (int i = 0; i < kavosAparatai.length; i++) {
+            kavosAparatai[i].setKavosAparatoProduktus(produktuObjektas.getCukrausKiekis(), produktuObjektas.getPupeliuKiekis(), produktuObjektas.getVandensKiekis());
         }
-
-
     }
 
 
+
 }
+
 
 
