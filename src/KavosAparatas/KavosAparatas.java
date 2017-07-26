@@ -12,23 +12,20 @@ import static KavosAparatas.KavosProduktai.*;
  */
 public class KavosAparatas {
 
-     int panaudojimuSkaicius;
+    int panaudojimuSkaicius;
     static int sukurtuKavosAparatuSkaicius;
+    KavosProduktai kavosProduktai;
 
-    static void suskaiciuosSukurtuAparatuSkaiciu(){
-        /??????????????? kaip tuos objektus suskaiciuoti
-
-
-        System.out.println("Viso buvo sukurta: "+sukurtuKavosAparatuSkaicius);
+    public static void suskaiciuosSukurtuAparatuSkaiciu() {
+        System.out.println("Viso buvo sukurta: " + sukurtuKavosAparatuSkaicius);
     }
 
 
     public KavosAparatas() {
+        sukurtuKavosAparatuSkaicius++;
+        kavosProduktai = new KavosProduktai(Konstantos.CUKRAUS_PAPILDYMAS, Konstantos.PUPELIU_PAPILDYMAS, Konstantos.VANDENS_PAPILDYMAS);
     }
 
-    public KavosAparatas(KavosProduktai kavosProduktai) {
-
-    }
 
     public int getCukrausKiekis() {
         return cukrausKiekis;
@@ -42,8 +39,20 @@ public class KavosAparatas {
         return pupeliuKiekis;
     }
 
+    public void setCukrausKiekis(int cukrausKiekis) {
+        KavosProduktai.cukrausKiekis = cukrausKiekis;
+    }
 
-    void setKavosAparatoProduktus(int cukrausKiekis, int pupeliuKiekis, int vandensKiekis) {
+    public void setPupeliuKiekis(int pupeliuKiekis) {
+        KavosProduktai.pupeliuKiekis = pupeliuKiekis;
+    }
+
+    public void setVandensKiekis(int vandensKiekis) {
+        KavosProduktai.vandensKiekis = vandensKiekis;
+    }
+
+
+    void setKavosProduktai(int cukrausKiekis, int pupeliuKiekis, int vandensKiekis) {
         KavosProduktai.cukrausKiekis = cukrausKiekis;
         KavosProduktai.pupeliuKiekis = pupeliuKiekis;
         KavosProduktai.vandensKiekis = vandensKiekis;
@@ -119,24 +128,42 @@ public class KavosAparatas {
         pranesameInformacijaPoKiekvienoPanaudojimo();
     }
 
-    public void gaminaKava(String kavosPavadinimas) {
-        KavosPuodelis kavosPuodelis = new KavosPuodelis(kavosPavadinimas);
-        KavosProduktai kavosProduktai=new KavosProduktai();
-
+    public KavosPuodelis gaminaKava(String kavosPavadinimas) {
+        KavosPuodelis kavosPuodelis;
         switch (kavosPavadinimas) {
             case "espresso":
-               new EspressoPuodelis();
-               //????????????? kavosProduktai.setKavosProduktai(KavosPuodelis);
-                break;
+                kavosPuodelis = new EspressoPuodelis();
+                KavosProduktai isEsptessoProduktai = kavosPuodelis.produktuKiekiai;
+                ////////////////////
+                setCukrausKiekis(cukrausKiekis - isEsptessoProduktai.getCukrausKiekis());
+                setPupeliuKiekis(pupeliuKiekis - isEsptessoProduktai.getPupeliuKiekis());
+                setVandensKiekis(vandensKiekis - isEsptessoProduktai.getVandensKiekis());
+                kavosPuodelis.arKavaPagaminta = true;
+
+                return kavosPuodelis;
             case "capucino":
-                new CapucinoPuodelis();
-                break;
+                kavosPuodelis = new CapucinoPuodelis();
+                KavosProduktai isCapucinoProduktai = kavosPuodelis.produktuKiekiai;
+                setCukrausKiekis(cukrausKiekis - isCapucinoProduktai.getCukrausKiekis());
+                setPupeliuKiekis(pupeliuKiekis - isCapucinoProduktai.getPupeliuKiekis());
+                setVandensKiekis(vandensKiekis - isCapucinoProduktai.getVandensKiekis());
+                kavosPuodelis.arKavaPagaminta = true;
+
+                return kavosPuodelis;
             case "latte":
-                new LattePuodelis();
-                break;
+                kavosPuodelis = new LattePuodelis();
+                KavosProduktai isLatteProduktai = kavosPuodelis.produktuKiekiai;
+                setCukrausKiekis(cukrausKiekis - isLatteProduktai.getCukrausKiekis());
+                setPupeliuKiekis(pupeliuKiekis - isLatteProduktai.getPupeliuKiekis());
+                setVandensKiekis(vandensKiekis - isLatteProduktai.getVandensKiekis());
+                kavosPuodelis.arKavaPagaminta = true;
+
+                return kavosPuodelis;
 
         }
 
+        return kavosPuodelis;
     }
+
 
 }

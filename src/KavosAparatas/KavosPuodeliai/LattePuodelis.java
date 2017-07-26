@@ -10,8 +10,8 @@ import KavosAparatas.*;
 public class LattePuodelis extends KavosPuodelis {
 
    public LattePuodelis(){
-        super.kavosPavadinimas="latte";
-        super.produktuKiekiai= new KavosProduktai(20,150,200);
+       super("latte",20,150,200);
+
     }
 
 }

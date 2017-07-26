@@ -1,0 +1,1 @@
+static: jei as noriu issikviesti kita metoda ar kintamaji is kitos klases ir nenoriu kurti objekto, tas metodas ar kintamasis kitoje klaseje turi buti static.

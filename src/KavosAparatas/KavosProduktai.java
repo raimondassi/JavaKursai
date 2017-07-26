@@ -3,13 +3,12 @@ package KavosAparatas;
 /**
  * Created by Raimondas on 2017.07.14.
  */
-public class KavosProduktai {
+public class
+KavosProduktai {
     static int cukrausKiekis;
-   static int pupeliuKiekis;
-   static int vandensKiekis;
+    static int pupeliuKiekis;
+    static int vandensKiekis;
 
-   public KavosProduktai() {
-    }
 
     public KavosProduktai(int cukrausKiekis, int pupeliuKiekis, int vandensKiekis) {
         this.cukrausKiekis = cukrausKiekis;
@@ -43,6 +42,18 @@ public class KavosProduktai {
 
     public int getVandensKiekis() {
         return vandensKiekis;
+    }
+
+    public static void setCukrausKiekis(int cukrausKiekis) {
+        KavosProduktai.cukrausKiekis = cukrausKiekis;
+    }
+
+    public static void setPupeliuKiekis(int pupeliuKiekis) {
+        KavosProduktai.pupeliuKiekis = pupeliuKiekis;
+    }
+
+    public static void setVandensKiekis(int vandensKiekis) {
+        KavosProduktai.vandensKiekis = vandensKiekis;
     }
 
 }

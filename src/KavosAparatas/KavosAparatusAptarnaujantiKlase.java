@@ -1,7 +1,5 @@
 package KavosAparatas;
 
-import java.util.List;
-
 /**
  * Created by Raimondas on 2017.07.17.
  */
@@ -46,7 +44,7 @@ public class KavosAparatusAptarnaujantiKlase {
 
     public void visiemsAparatamsPriskiriameTaPatiProduktuObjekta(KavosAparatas[] kavosAparatai,  KavosProduktai produktuObjektas) {
         for (int i = 0; i < kavosAparatai.length; i++) {
-            kavosAparatai[i].setKavosAparatoProduktus(produktuObjektas.getCukrausKiekis(), produktuObjektas.getPupeliuKiekis(), produktuObjektas.getVandensKiekis());
+            kavosAparatai[i].setKavosProduktai(produktuObjektas.getCukrausKiekis(), produktuObjektas.getPupeliuKiekis(), produktuObjektas.getVandensKiekis());
         }
     }
 
