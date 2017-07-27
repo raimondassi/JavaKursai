@@ -6,5 +6,16 @@ import KavosAparatas.*;
  * Created by ozc on 2017.07.25.
  */
 public enum KavosPavadinimas {
-    CAPUCINO, ESPRESSO, LATTE
+    CAPUCINO (new CapucinoPuodelis()), ESPRESSO (new EspressoPuodelis()), LATTE (new LattePuodelis()) ;
+
+    private  KavosPuodelis kavosPuodelis;
+
+    KavosPavadinimas(KavosPuodelis kavosPuodelis){
+        this.kavosPuodelis=kavosPuodelis;
+
+    }
+
+    public KavosPuodelis getKavosPuodelis(){
+        return kavosPuodelis;
 }
+    }

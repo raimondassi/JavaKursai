@@ -32,15 +32,15 @@ KavosProduktai {
     }
 
 
-    public int getCukrausKiekis() {
+    public static int getCukrausKiekis() {
         return cukrausKiekis;
     }
 
-    public int getPupeliuKiekis() {
+    public static int getPupeliuKiekis() {
         return pupeliuKiekis;
     }
 
-    public int getVandensKiekis() {
+    public static int getVandensKiekis() {
         return vandensKiekis;
     }
 

@@ -9,7 +9,7 @@ import static KavosAparatas.KavosAparatas.*;
 /**
  * Created by Raimondas on 2017.07.24.
  */
-public class Puodelis {
+public abstract class Puodelis {
 
 
     int puodelioTalpa;

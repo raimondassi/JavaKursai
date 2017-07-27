@@ -4,6 +4,9 @@ package KavosAparatas;
 
 import KavosAparatas.KavosPuodeliai.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static KavosAparatas.KavosProduktai.*;
 
 
@@ -39,15 +42,15 @@ public class KavosAparatas {
         return pupeliuKiekis;
     }
 
-    public void setCukrausKiekis(int cukrausKiekis) {
+    public static void setCukrausKiekis(int cukrausKiekis) {
         KavosProduktai.cukrausKiekis = cukrausKiekis;
     }
 
-    public void setPupeliuKiekis(int pupeliuKiekis) {
+    public static void setPupeliuKiekis(int pupeliuKiekis) {
         KavosProduktai.pupeliuKiekis = pupeliuKiekis;
     }
 
-    public void setVandensKiekis(int vandensKiekis) {
+    public static void setVandensKiekis(int vandensKiekis) {
         KavosProduktai.vandensKiekis = vandensKiekis;
     }
 
@@ -129,15 +132,16 @@ public class KavosAparatas {
     }
 
     public KavosPuodelis gaminaKava(String kavosPavadinimas) {
-        KavosPuodelis kavosPuodelis;
+    //////////////////nuimk kavosPuodelio inicializacija null;
+        KavosPuodelis kavosPuodelis = null;
         switch (kavosPavadinimas) {
             case "espresso":
                 kavosPuodelis = new EspressoPuodelis();
-                KavosProduktai isEsptessoProduktai = kavosPuodelis.produktuKiekiai;
+                KavosProduktai isEspressoProduktai = kavosPuodelis.produktuKiekiai;
                 ////////////////////
-                setCukrausKiekis(cukrausKiekis - isEsptessoProduktai.getCukrausKiekis());
-                setPupeliuKiekis(pupeliuKiekis - isEsptessoProduktai.getPupeliuKiekis());
-                setVandensKiekis(vandensKiekis - isEsptessoProduktai.getVandensKiekis());
+                setCukrausKiekis(cukrausKiekis - isEspressoProduktai.getCukrausKiekis());
+                setPupeliuKiekis(pupeliuKiekis - isEspressoProduktai.getPupeliuKiekis());
+                setVandensKiekis(vandensKiekis - isEspressoProduktai.getVandensKiekis());
                 kavosPuodelis.arKavaPagaminta = true;
 
                 return kavosPuodelis;
@@ -159,11 +163,54 @@ public class KavosAparatas {
                 kavosPuodelis.arKavaPagaminta = true;
 
                 return kavosPuodelis;
+            default:
+                System.out.println("Neturime tokio kavos tipo");
+
 
         }
 
         return kavosPuodelis;
     }
+
+    public  static KavosPuodelis gaminkKavaSuEnum(String kavosPavadinimas){
+
+        KavosPavadinimas kavosTipas=KavosPavadinimas.valueOf(kavosPavadinimas.toUpperCase());
+        KavosPuodelis kavosPuodelis=kavosTipas.getKavosPuodelis();
+        KavosProduktai kavosProduktai=kavosPuodelis.produktuKiekiai;
+        setCukrausKiekis(cukrausKiekis - kavosProduktai.getCukrausKiekis());
+        setPupeliuKiekis(pupeliuKiekis - kavosProduktai.getPupeliuKiekis());
+        setVandensKiekis(vandensKiekis - kavosProduktai.getVandensKiekis());
+        kavosPuodelis.arKavaPagaminta = true;
+
+
+        return kavosPuodelis;
+    }
+
+    public static KavosPuodelis gaminkKavaSuMap(String kavosPavadinimas){
+
+
+        Map<String, KavosPuodelis> kavosPavadinimasKavosPuodelisMap=new HashMap<>();
+        kavosPavadinimasKavosPuodelisMap.put("CAPUCINO",new CapucinoPuodelis());
+        kavosPavadinimasKavosPuodelisMap.put("ESPRESSO",new EspressoPuodelis());
+        kavosPavadinimasKavosPuodelisMap.put("LATTE",new LattePuodelis());
+
+
+
+
+        if (kavosPavadinimasKavosPuodelisMap.containsKey(kavosPavadinimas.toUpperCase())){
+            kavosPavadinimasKavosPuodelisMap.get(kavosPavadinimas.toUpperCase());
+
+
+
+        }
+
+
+
+
+        return null;
+    }
+
+
 
 
 }
