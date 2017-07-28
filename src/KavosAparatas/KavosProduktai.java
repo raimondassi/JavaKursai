@@ -1,10 +1,12 @@
 package KavosAparatas;
 
+import KavosAparatas.KavosPuodeliai.KavosPavadinimas;
+import KavosAparatas.KavosPuodeliai.KavosPuodelis;
+
 /**
  * Created by Raimondas on 2017.07.14.
  */
-public class
-KavosProduktai {
+public class KavosProduktai {
     static int cukrausKiekis;
     static int pupeliuKiekis;
     static int vandensKiekis;
@@ -16,44 +18,44 @@ KavosProduktai {
         this.vandensKiekis = vandensKiekis;
     }
 
-    public KavosProduktai gausKavosProduktuKopija() {
+
+    public static KavosProduktai gausKavosProduktuKopija() {
         return new KavosProduktai(cukrausKiekis, pupeliuKiekis, vandensKiekis);
     }
 
 
-    public KavosProduktai setKavosProduktusVisSukuriantNaujaKavosProduktuObjekta() {
-        return new KavosProduktai(cukrausKiekis, pupeliuKiekis, vandensKiekis);
+
+    public static void mazinameKavosProduktusKavosAparateVisGaminantNaujaPuodeli(KavosPuodelis kavosProduktaiIsPuodelio) {
+        cukrausKiekis = cukrausKiekis - kavosProduktaiIsPuodelio.getCukrausKiekis();
+        pupeliuKiekis = pupeliuKiekis - kavosProduktaiIsPuodelio.getPupeliuKiekis();
+        vandensKiekis = vandensKiekis - kavosProduktaiIsPuodelio.getVandensKiekis();
+
+
     }
 
-    public void setKavosProduktai(int cukrausKiekis, int pupeliuKiekis, int vandensKiekis) {
-        this.cukrausKiekis = this.cukrausKiekis - cukrausKiekis;
 
-
-    }
-
-
-    public static int getCukrausKiekis() {
+    public int getCukrausKiekis() {
         return cukrausKiekis;
     }
 
-    public static int getPupeliuKiekis() {
+    public int getPupeliuKiekis() {
         return pupeliuKiekis;
     }
 
-    public static int getVandensKiekis() {
+    public int getVandensKiekis() {
         return vandensKiekis;
     }
 
-    public static void setCukrausKiekis(int cukrausKiekis) {
-        KavosProduktai.cukrausKiekis = cukrausKiekis;
+    public void setCukrausKiekis(int cukrausKiekis) {
+        this.cukrausKiekis = cukrausKiekis;
     }
 
-    public static void setPupeliuKiekis(int pupeliuKiekis) {
-        KavosProduktai.pupeliuKiekis = pupeliuKiekis;
+    public void setPupeliuKiekis(int pupeliuKiekis) {
+        this.pupeliuKiekis = pupeliuKiekis;
     }
 
-    public static void setVandensKiekis(int vandensKiekis) {
-        KavosProduktai.vandensKiekis = vandensKiekis;
+    public void setVandensKiekis(int vandensKiekis) {
+        this.vandensKiekis = vandensKiekis;
     }
 
 }

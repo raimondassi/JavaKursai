@@ -15,7 +15,7 @@ public class Konstantos {
     final static int VANDENS_PAPILDYMAS=10000;
     final static int PUPELIU_PAPILDYMAS=5000;
     final static int CUKRAUS_PAPILDYMAS=1000;
-    final int MAKSIMALI_PUODELIO_TALPA = 200;
+    final static int MAKSIMALI_PUODELIO_TALPA = 200;
 
 
 }
