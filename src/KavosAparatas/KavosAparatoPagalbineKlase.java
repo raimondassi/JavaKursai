@@ -8,7 +8,7 @@ import java.util.*;
 public class KavosAparatoPagalbineKlase extends KavosAparatusAptarnaujantiKlase {
 
 
-    List<KavosAparatas> kavosAparatuSarasas = new ArrayList<KavosAparatas>();
+    static List<KavosAparatas> kavosAparatuSarasas = new ArrayList<KavosAparatas>();
 
 
 //////////////Kavos aparato pagalbinėje klasėje overloadinti metodus, kurie naudoja masyvus panaudojant: map, list
