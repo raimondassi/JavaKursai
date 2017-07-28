@@ -138,7 +138,6 @@ public class KavosAparatas {
             case "espresso":
                 kavosPuodelis = new EspressoPuodelis();
                 KavosProduktai isEspressoProduktai = kavosPuodelis.produktuKiekiai;
-                ////////////////////
                 setCukrausKiekis(cukrausKiekis - isEspressoProduktai.getCukrausKiekis());
                 setPupeliuKiekis(pupeliuKiekis - isEspressoProduktai.getPupeliuKiekis());
                 setVandensKiekis(vandensKiekis - isEspressoProduktai.getVandensKiekis());
