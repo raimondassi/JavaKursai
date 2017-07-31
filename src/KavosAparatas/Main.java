@@ -12,7 +12,11 @@ public class Main {
         //  kavosAparatusAptarnaujantiKlase.visiemsAparatamsPriskiriameTaPatiProduktuObjekta(kavosaparatuMasyvas,kavosProduktuObjektas);
 
 ////////////////// kaip su tais naujais KavosProduktu pbjektais. kazkas neveikia.
+
+
         new KavosAparatas();
+
+
         KavosAparatas.gaminkKavaSuMap("capucino");
         KavosAparatas.gaminkKavaSuMap("espresso");
         KavosAparatas.gaminkKavaSuMap("espresso1");

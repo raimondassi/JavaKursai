@@ -7,9 +7,9 @@ import KavosAparatas.KavosPuodeliai.KavosPuodelis;
  * Created by Raimondas on 2017.07.14.
  */
 public class KavosProduktai {
-    static int cukrausKiekis;
-    static int pupeliuKiekis;
-    static int vandensKiekis;
+     int cukrausKiekis=100;
+     int pupeliuKiekis;
+     int vandensKiekis;
 
 
     public KavosProduktai(int cukrausKiekis, int pupeliuKiekis, int vandensKiekis) {
@@ -18,13 +18,13 @@ public class KavosProduktai {
         this.vandensKiekis = vandensKiekis;
     }
 
-
+/*
     public static KavosProduktai gausKavosProduktuKopija() {
         return new KavosProduktai(cukrausKiekis, pupeliuKiekis, vandensKiekis);
     }
 
 
-
+/*
     public static void mazinameKavosProduktusKavosAparateVisGaminantNaujaPuodeli(KavosPuodelis kavosProduktaiIsPuodelio) {
         cukrausKiekis = cukrausKiekis - kavosProduktaiIsPuodelio.getCukrausKiekis();
         pupeliuKiekis = pupeliuKiekis - kavosProduktaiIsPuodelio.getPupeliuKiekis();
@@ -32,7 +32,7 @@ public class KavosProduktai {
 
 
     }
-
+*/
 
     public int getCukrausKiekis() {
         return cukrausKiekis;
