@@ -6,58 +6,23 @@ import KavosAparatas.KavosPuodeliai.*;
 import java.util.HashMap;
 import java.util.Map;
 
-import static KavosAparatas.KavosProduktai.*;
-
 /**
  * Created by Raimondas on 2017.07.14.
  */
 public class KavosAparatas {
-    private static CapucinoPuodelis capucinoPuodelis = new CapucinoPuodelis();
-    private static EspressoPuodelis espressoPuodelis = new EspressoPuodelis();
-    private static LattePuodelis lattePuodelis = new LattePuodelis();
-     int  panaudojimuSkaicius;
+    int panaudojimuSkaicius;
     static int sukurtuKavosAparatuSkaicius;
-     KavosProduktai kavosProduktuPapildymas;
+    KavosProduktai kavosProduktuKiekis;
 
     public static void suskaiciuosSukurtuAparatuSkaiciu() {
         System.out.println("Viso buvo sukurta: " + sukurtuKavosAparatuSkaicius);
     }
 
-     public  KavosAparatas() {
+    public KavosAparatas() {
         sukurtuKavosAparatuSkaicius++;
-
-         kavosProduktuPapildymas = new KavosProduktai(Konstantos.CUKRAUS_PAPILDYMAS, Konstantos.PUPELIU_PAPILDYMAS, Konstantos.VANDENS_PAPILDYMAS);
+        kavosProduktuKiekis = new KavosProduktai(Konstantos.CUKRAUS_PAPILDYMAS, Konstantos.PUPELIU_PAPILDYMAS, Konstantos.VANDENS_PAPILDYMAS);
     }
 
-    public int getCukrausKiekis() {
-        return cukrausKiekis;
-    }
-
-    public int getVandensKiekis() {
-        return vandensKiekis;
-    }
-
-    public int getPupeliuKiekis() {
-        return pupeliuKiekis;
-    }
-
-    public static void setCukrausKiekis(int cukrausKiekis) {
-        KavosProduktai.cukrausKiekis = cukrausKiekis;
-    }
-
-    public static void setPupeliuKiekis(int pupeliuKiekis) {
-        KavosProduktai.pupeliuKiekis = pupeliuKiekis;
-    }
-
-    public static void setVandensKiekis(int vandensKiekis) {
-        KavosProduktai.vandensKiekis = vandensKiekis;
-    }
-
-    void setKavosProduktai(int cukrausKiekis, int pupeliuKiekis, int vandensKiekis) {
-        KavosProduktai.cukrausKiekis = cukrausKiekis;
-        KavosProduktai.pupeliuKiekis = pupeliuKiekis;
-        KavosProduktai.vandensKiekis = vandensKiekis;
-    }
 
     public int getPanaudojimuSkaicius() {
         return panaudojimuSkaicius;
@@ -67,32 +32,6 @@ public class KavosAparatas {
         this.panaudojimuSkaicius = 0;
     }
 
-    int papildytiVandens() {
-        return vandensKiekis = Konstantos.VANDENS_PAPILDYMAS;
-    }
-
-    int papildytiPupeliu() {
-        return pupeliuKiekis = Konstantos.PUPELIU_PAPILDYMAS;
-    }
-
-    int papildytiCukraus() {
-        return cukrausKiekis = Konstantos.CUKRAUS_PAPILDYMAS;
-    }
-
-    void tikrinameArNereikiaKoNorsPapildyti() {
-        if (vandensKiekis <= Konstantos.MINIMALUS_VANDENS_KIEKIS) {
-            papildytiVandens();
-            System.out.println("Pasiektas minimalus vandens kiekis: papildome vandeni");
-        }
-        if (pupeliuKiekis <= Konstantos.MINIMALUS_PUPELIU_KIEKIS) {
-            papildytiPupeliu();
-            System.out.println("Pasiektas minimalus pupeliu kiekis: papildome pupeles");
-            if (cukrausKiekis <= Konstantos.MINIMALUS_CUKRAUS_KIEKIS) {
-                papildytiCukraus();
-                System.out.println("Pasiektas minimalus cukraus kiekis: papildome cukru");
-            }
-        }
-    }
 
     void tikrinamePanaudojimuBusena() {
         if (panaudojimuSkaicius == Konstantos.PANAUDOJIMO_SKAICIAUS_KONSTANTA) {
@@ -102,10 +41,8 @@ public class KavosAparatas {
         panaudojimuSkaicius++;
     }
 
-    void isvalomeKavosAparatoProduktus() {
-        cukrausKiekis = 0;
-        vandensKiekis = 0;
-        pupeliuKiekis = 0;
+    void pranesameInformacijaApiePanaudijimuSkaiciuPoKiekvienoPanaudojimo() {
+        System.out.println("Iki issiplovimo liko: " + (Konstantos.PANAUDOJIMO_SKAICIAUS_KONSTANTA - panaudojimuSkaicius));
     }
 
 
@@ -113,33 +50,15 @@ public class KavosAparatas {
         panaudojimuSkaicius = 0;
     }
 
-    void pranesameInformacijaPoKiekvienoPanaudojimo() {
-        System.out.println("Likes vandens kiekis: " + KavosProduktai.vandensKiekis);
-        System.out.println("Lines pupeliu kiekis: " + KavosProduktai.pupeliuKiekis);
-        System.out.println("Likes cukraus kiekis: " + cukrausKiekis);
-        System.out.println("Iki issiplovimo liko: " + (Konstantos.PANAUDOJIMO_SKAICIAUS_KONSTANTA - panaudojimuSkaicius));
-    }
 
-    void visiTikrinimaiIrPranesimai() {
-        tikrinameArNereikiaKoNorsPapildyti();
-        tikrinamePanaudojimuBusena();
-        pranesameInformacijaPoKiekvienoPanaudojimo();
-    }
+    public KavosPuodelis gaminaKava(String kavosPavadinimas) {
 
-    public  KavosPuodelis gaminaKava(String kavosPavadinimas) {
-        //////////////////nuimk kavosPuodelio inicializacija null;
-        KavosPuodelis kavosPuodelis = null;
+        KavosPuodelis kavosPuodelis;
         switch (kavosPavadinimas) {
             case "espresso":
                 kavosPuodelis = new EspressoPuodelis();
                 KavosProduktai isEspressoProduktai = kavosPuodelis.produktuKiekiai;
-                this.kavosProduktuPapildymas.setCukrausKiekis(this.kavosProduktuPapildymas.getCukrausKiekis()-kavosPuodelis.produktuKiekiai.getCukrausKiekis());
-
-
-
-
-
-
+                this.kavosProduktuKiekis.setCukrausKiekis(this.kavosProduktuKiekis.getCukrausKiekis() - kavosPuodelis.produktuKiekiai.getCukrausKiekis());
                 setCukrausKiekis(cukrausKiekis - isEspressoProduktai.getCukrausKiekis());
                 setPupeliuKiekis(pupeliuKiekis - isEspressoProduktai.getPupeliuKiekis());
                 setVandensKiekis(vandensKiekis - isEspressoProduktai.getVandensKiekis());
@@ -178,7 +97,7 @@ public class KavosAparatas {
         return kavosPuodelis;
     }
 
-    public  KavosPuodelis gaminkKavaSuMap(String kavosPavadinimas) {
+    public KavosPuodelis gaminkKavaSuMap(String kavosPavadinimas) {
         Map<String, KavosPuodelis> kavosPavadinimasKavosPuodelisMap = new HashMap<String, KavosPuodelis>();
         kavosPavadinimasKavosPuodelisMap.put("CAPUCINO", capucinoPuodelis);
         kavosPavadinimasKavosPuodelisMap.put("ESPRESSO", espressoPuodelis);
@@ -187,22 +106,14 @@ public class KavosAparatas {
             KavosPuodelis gautasPuodelis = kavosPavadinimasKavosPuodelisMap.get(kavosPavadinimas.toUpperCase());
 
 
-
-
-
-
-
-
-
-
-          //  System.out.println("vandens kopija prie atimamnt " + KavosProduktai.gausKavosProduktuKopija().getVandensKiekis());
+            //  System.out.println("vandens kopija prie atimamnt " + KavosProduktai.gausKavosProduktuKopija().getVandensKiekis());
 
             //KavosProduktai.mazinameKavosProduktusKavosAparateVisGaminantNaujaPuodeli(gautasPuodelis);
 
-          //  System.out.println("vandens kopija po atimamnt " + KavosProduktai.gausKavosProduktuKopija().getVandensKiekis());
+            //  System.out.println("vandens kopija po atimamnt " + KavosProduktai.gausKavosProduktuKopija().getVandensKiekis());
 
             ///????????????? kam man reikalinga Gaminant kav? ie�koti ar toks puodelis jau yra. Radus, pagaminti puodelio
-          // ir produkt? kopij? bei perduoti gaminimui.
+            // ir produkt? kopij? bei perduoti gaminimui.
 
         } else {
             System.out.println("Nera tokios kavos pavadinimo, pasirink kita kava");

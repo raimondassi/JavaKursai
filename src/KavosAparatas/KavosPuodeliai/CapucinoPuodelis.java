@@ -8,10 +8,12 @@ import KavosAparatas.*;
  */
 public class CapucinoPuodelis extends KavosPuodelis {
 
+
     public CapucinoPuodelis() {
-        super("capucino", 30, 100, 200);
+        super("capucino", Konstantos.CAPUCINO_CUKRAUS_POREIKIS, Konstantos.CAPUCINO_PUPELIU_POREIKIS, Konstantos.CAPUCINO_VANDENS_POREIKIS);
 
 
     }
+
 
 }

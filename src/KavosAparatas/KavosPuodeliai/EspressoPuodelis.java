@@ -9,7 +9,7 @@ import KavosAparatas.*;
 public class EspressoPuodelis extends KavosPuodelis {
 
     public EspressoPuodelis() {
-        super("espresso", 10, 100, 100);
+        super("espresso", Konstantos.ESPRESSO_CUKRAUS_POREIKIS, Konstantos.ESPRESSO_PUPELIU_POREIKIS, Konstantos.ESPRESSO_VANDENS_POREIKIS);
 
 
     }

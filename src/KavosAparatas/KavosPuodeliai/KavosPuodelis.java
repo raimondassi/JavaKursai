@@ -8,8 +8,8 @@ import KavosAparatas.*;
  */
 public class KavosPuodelis {
 
-    public  KavosProduktai produktuKiekiai;
-    public  String kavosPavadinimas;
+    public KavosProduktai produktuKiekiai;
+    public String kavosPavadinimas;
     public boolean arKavaPagaminta;
     int puodelioTalpa;
 

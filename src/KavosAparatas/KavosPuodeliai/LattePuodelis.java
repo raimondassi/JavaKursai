@@ -10,7 +10,7 @@ import KavosAparatas.*;
 public class LattePuodelis extends KavosPuodelis {
 
    public LattePuodelis(){
-       super("latte",20,150,200);
+       super("latte",Konstantos.LATTE_CUKRAUS_POREIKIS,Konstantos.LATTE_PUPELIU_POREIKIS,Konstantos.LATTE_VANDENS_POREIKIS);
 
     }
 
