@@ -5,7 +5,8 @@ package KavosAparatas;
  */
 public class Main {
     public static void main(String[] args) {
-
+        KavosAparatas kavosAparatas=new KavosAparatas();
+        kavosAparatas.gaminkKavaSuMap("capucino");
 
 
 
