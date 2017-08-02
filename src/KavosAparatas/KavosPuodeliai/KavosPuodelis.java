@@ -8,15 +8,15 @@ import KavosAparatas.*;
  */
 public class KavosPuodelis {
 
-    public KavosProduktai produktuKiekiai;
-    public String kavosPavadinimas;
+    public KavosProduktai kavosPuodelioObjektoKavosProduktai;
+    public String kavosPuodelioObjektoKavosPavadinimas;
     public boolean arKavaPagaminta;
     int puodelioTalpa;
 
 
     public KavosPuodelis(String kavosPavadinimas, int cukrausKiekis, int pupeliuKiekis, int vandensKiekis) {
-        this.kavosPavadinimas = kavosPavadinimas;
-        this.produktuKiekiai = new KavosProduktai(cukrausKiekis, pupeliuKiekis, vandensKiekis);
+        this.kavosPuodelioObjektoKavosPavadinimas = kavosPavadinimas;
+        this.kavosPuodelioObjektoKavosProduktai = new KavosProduktai(cukrausKiekis, pupeliuKiekis, vandensKiekis);
 
     }
 

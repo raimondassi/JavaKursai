@@ -6,9 +6,14 @@ package KavosAparatas;
 public class Main {
     public static void main(String[] args) {
 
-
-
-
-
+        KavosAparatas kavosAparatas = new KavosAparatas();
+        /*
+        kavosAparatas.gaminkKavaSuMap("capucino");
+        kavosAparatas.gaminkKavaSuMap("latte");
+        kavosAparatas.gaminkKavaSuMap("kazkas");
+*/
+        kavosAparatas.gaminkKavaSuEnum("capucino");
+        kavosAparatas.gaminkKavaSuEnum("latte");
+        kavosAparatas.gaminkKavaSuEnum("kazkas");
     }
 }
