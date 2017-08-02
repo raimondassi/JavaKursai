@@ -52,7 +52,6 @@ public class KavosAparatas {
 
 
     public KavosPuodelis gaminaKava(String kavosPavadinimas) {
-
         KavosPuodelis kavosPuodelis;
         switch (kavosPavadinimas) {
             case "espresso":
