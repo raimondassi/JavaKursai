@@ -19,10 +19,10 @@ public class KavosAparatusAptarnaujantiKlase {
     public void informuojaKiekProduktuIsvalytaAparatuMasyve(KavosAparatas[] kavosAparatuMasyvas) {
         int isvalytasCukrus = 0, isvalytosPupeles = 0, isvalytasVanduo = 0;
         for (int i = 0; i < kavosAparatuMasyvas.length; i++) {
-            isvalytasCukrus = isvalytasCukrus + kavosAparatuMasyvas[i].kavosProduktuKiekis.getCukrausKiekis();
-            isvalytosPupeles = isvalytosPupeles + kavosAparatuMasyvas[i].kavosProduktuKiekis.getPupeliuKiekis();
-            isvalytasVanduo = isvalytasVanduo + kavosAparatuMasyvas[i].kavosProduktuKiekis.getVandensKiekis();
-            kavosAparatuMasyvas[i].kavosProduktuKiekis.isvalomeKavosAparatoProduktus();
+            isvalytasCukrus = isvalytasCukrus + kavosAparatuMasyvas[i].kavosAparatoObjektoKavosProduktai.getKavosProduktaiObjektoCukrausKiekis();
+            isvalytosPupeles = isvalytosPupeles + kavosAparatuMasyvas[i].kavosAparatoObjektoKavosProduktai.getKavosProduktaiObjektoPupeliuKiekis();
+            isvalytasVanduo = isvalytasVanduo + kavosAparatuMasyvas[i].kavosAparatoObjektoKavosProduktai.getKavosProduktaiObjektoVandensKiekis();
+            kavosAparatuMasyvas[i].kavosAparatoObjektoKavosProduktai.isvalomeKavosAparatoProduktus();
         }
         System.out.println("Isvalytas vanduo: " + isvalytasVanduo);
         System.out.println("Isvalytas cukrus: " + isvalytasCukrus);
@@ -44,7 +44,7 @@ public class KavosAparatusAptarnaujantiKlase {
 
     public void visiemsAparatamsPriskiriameTaPatiProduktuObjekta(KavosAparatas[] kavosAparatai, KavosProduktai produktuObjektas) {
         for (int i = 0; i < kavosAparatai.length; i++) {
-            kavosAparatai[i].kavosProduktuKiekis=produktuObjektas;
+            kavosAparatai[i].kavosAparatoObjektoKavosProduktai =produktuObjektas;
         }
     }
 }
